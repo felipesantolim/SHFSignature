@@ -26,6 +26,8 @@ class SHFSignatureView: UIView {
         }
     }
     
+    @IBInspectable var lineColor: UIColor = UIColor.black
+    
     //MARK: - Private porperties
     fileprivate var bezierPath      : UIBezierPath  = UIBezierPath()
     fileprivate var controlPoint    : Int           = 0
@@ -46,6 +48,7 @@ class SHFSignatureView: UIView {
     //MARK: - Draw
     override func draw(_ rect: CGRect) {
         super.draw(rect)
+        lineColor.setStroke()
         self.bezierPath.stroke()
     }
     
